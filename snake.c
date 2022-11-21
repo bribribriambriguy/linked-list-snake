@@ -21,10 +21,8 @@ struct snake* create_snake(int length){
         head -> y = i;
         head -> xprev = i;
         head -> yprev = i;
-        head = head -> next;
-        //printf("ran"); 
+        head = head -> next; 
     }
-    printf("\n");
 
     (snake+i-1) -> next = NULL;
     (snake+i-1) -> x = i;
