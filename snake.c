@@ -54,6 +54,15 @@ void add_snake(struct snake *head, int x, int y){
     new_block -> yprev = y; 
 }
 
+void delete_snake(struct snake *head){
+	struct snake *temp;
+    while(temp != NULL){
+        head = head -> next;
+        free(temp);
+        temp = head;
+    }
+}
+
 void print_snake(struct snake *head){
     struct snake *temp = head;
     while (temp != NULL){
@@ -68,8 +77,9 @@ int main(){
     int length = 5;
     struct snake *head = create_snake(length);
     print_snake(head);
-    add_snake(head, 6, 6);
+    add_snake(head, 8,8);
     print_snake(head);
     snake_shift(head);
     print_snake(head);
+    delete_snake(head);
 }
